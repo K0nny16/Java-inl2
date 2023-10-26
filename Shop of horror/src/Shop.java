@@ -1,21 +1,23 @@
 import java.util.*;
 
 class Shop {
+    int slot;
     String item;
-    Double price;
-    Integer amount;
+    double price;
+    static int amount;
 
-    Shop(String item,Double price,Integer amount){
+    Shop(int slot,String item,double price,int amount){
+        this.slot = slot;
         this.item = item;
         this.price = price;
-        this.amount = amount;
+        Shop.amount = amount;
     }
     void inventory(int item){
         if(amount>=0){
-            item =- amount;
+            amount = amount - item;
         }
     }
     void info(){
-        System.out.println(item+", "+price+" SEK "+amount+" left.");
+        System.out.println(slot+": "+item+", "+price+" SEK "+amount+" left.");
     }
 }
