@@ -8,16 +8,13 @@ public class Customer {
         this.sum = sum;
         this.cart = cart;
     }
-    void checkout(double item){
-        if(Shop.amount>0){
-            sum = sum + item;
+    void checkout(double price, int amount){
+        if(amount>0){
+            sum = sum + price;
             cart++;
-        }
-        else{
-            System.out.println("The product is sold out!");
         }
     }
     void info(){
-        System.out.println("You purchased a total of "+cart+" items. The total cost was "+sum+" "+currency);
+        System.out.println("You purchased a total of "+cart+" items. The total cost was "+(float)sum+" "+currency);
     }
 }

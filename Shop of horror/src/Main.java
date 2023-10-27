@@ -9,19 +9,19 @@ public class Main {
         Currencies.put("DKK",1.58);
         Currencies.put("Euro",11.78);
         if(currency.equalsIgnoreCase("SEK")){
-            customer.sum = customer.sum*Currencies.get("SEK");
+            customer.sum = customer.sum/Currencies.get("SEK");
             customer.currency = "SEK";
         }
         if(currency.equalsIgnoreCase("DKK")){
-            customer.sum = customer.sum*Currencies.get("DKK");
+            customer.sum = customer.sum/Currencies.get("DKK");
             customer.currency = "DKK";
         }
         if(currency.equalsIgnoreCase("Euro")){
-            customer.sum = customer.sum*Currencies.get("Euro");
+            customer.sum = customer.sum/Currencies.get("Euro");
             customer.currency = "Euro";
         }
         else{
-            customer.sum = customer.sum*Currencies.get("SEK");
+            customer.sum = customer.sum/Currencies.get("SEK");
             customer.currency = "SEK";
         }
     }
@@ -35,26 +35,26 @@ public class Main {
 
         Customer customer = new Customer(0.00,0,"SEK");
 
-        System.out.println("Choose your option: ");
         boolean onOff = true;
         while(onOff){
             mask.info();
             knife.info();
             fakeblood.info();
             System.out.println("4: Quit.");
+            System.out.println("Choose your option: ");
             int answer = scanner.nextInt();
 
             if(answer==1){
+                customer.checkout(mask.price, mask.amount);
                 mask.inventory(1);
-                customer.checkout(mask.price);
             }
             if(answer==2){
+                customer.checkout(knife.price,knife.amount);
                 knife.inventory(1);
-                customer.checkout(knife.price);
             }
             if(answer==3){
+                customer.checkout(fakeblood.price,fakeblood.amount);
                 fakeblood.inventory(1);
-                customer.checkout(fakeblood.price);
             }
             if(answer==4){
                 System.out.println("Vilken valuta vill du betala med SEK/DKK/Euro? (Default is SEK)");
@@ -63,11 +63,9 @@ public class Main {
                 customer.info();
                 onOff = false;
             }
-            else{
+            if(answer<0 || answer>4){
                 System.out.println("Pick a option between 1 - 4! ");
             }
         }
-
-
     }
 }
