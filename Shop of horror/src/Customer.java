@@ -1,5 +1,5 @@
 public class Customer {
-    double sum = 0;
+    private double sum = 0;
     int cart = 0;
     String currency;
 
@@ -16,5 +16,11 @@ public class Customer {
     }
     void info(){
         System.out.println("You purchased a total of "+cart+" items. The total cost was "+(float)sum+" "+currency);
+    }
+    double getSum(){
+        return sum;
+    }
+    void setSum(double sum){
+        this.sum = sum;
     }
 }

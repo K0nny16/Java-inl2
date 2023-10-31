@@ -3,8 +3,8 @@ import java.util.*;
 class Shop {
     int slot;
     String item;
-    double price;
-     int amount;
+    private double price;
+    private int amount;
 
     Shop(int slot,String item,double price,int amount){
         this.slot = slot;
@@ -12,7 +12,7 @@ class Shop {
         this.price = price;
         this.amount = amount;
     }
-    void inventory(int item){
+    void setAmount(int item){
         if(amount- item>=0){
             amount = amount -item;
         }
@@ -22,5 +22,14 @@ class Shop {
     }
     void info(){
         System.out.println(slot+": "+item+" "+price+" SEK "+amount+" left.");
+    }
+    double getPrice(){
+        return price;
+    }
+    int getAmount(){
+        return amount;
+    }
+    void setPrice(double price){
+        this.price = price;
     }
 }
