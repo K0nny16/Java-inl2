@@ -1,8 +1,8 @@
 import java.util.*;
 
 class Shop {
-    int slot;
-    String item;
+    private int slot;
+    private String item;
     private double price;
     private int amount;
 

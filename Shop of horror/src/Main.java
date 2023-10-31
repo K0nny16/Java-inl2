@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
 
-    public static void currency(String currency,double sum,Customer customer){
-        HashMap<String,Double> Currencies = new HashMap<String,Double>();
+    public static void currency(String currency,Customer customer){
+        HashMap<String,Double> Currencies = new HashMap<>();
 
         Currencies.put("SEK",1.00);
         Currencies.put("DKK",1.58);
@@ -59,7 +59,7 @@ public class Main {
             if(answer==4){
                 System.out.println("Vilken valuta vill du betala med SEK/DKK/Euro? (Default is SEK)");
                 String choice = scanner.next();
-                currency(choice,customer.getSum(),customer);
+                currency(choice,customer);
                 customer.info();
                 onOff = false;
             }
