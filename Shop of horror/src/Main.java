@@ -31,7 +31,7 @@ public class Main {
 
         Shop mask = new Shop(1,"Mask",250.70,17);
         Shop knife = new Shop(2,"Kniv",139.45,4);
-        Discount fakeblood = new Discount(0.9,3,"Fake blood",89.10,10);
+        Discount fakeblood = new Discount(3,"Fake blood",89.10,10);
 
         Customer customer = new Customer(0.00,0,"SEK");
 
@@ -53,7 +53,7 @@ public class Main {
                 knife.setAmount(1);
             }
             if(answer==3){
-                customer.checkout(fakeblood.discountPrice(),fakeblood.getAmount());
+                customer.checkout(fakeblood.getPrice(),fakeblood.getAmount());
                 fakeblood.setAmount(1);
             }
             if(answer==4){

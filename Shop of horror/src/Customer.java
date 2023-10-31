@@ -10,7 +10,7 @@ public class Customer {
     }
     void checkout(double price, int amount){
         if(amount>0){
-            sum = sum + price;
+            sum = getSum() + price;
             cart++;
         }
     }
