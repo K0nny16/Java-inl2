@@ -53,7 +53,7 @@ public class Main {
                 knife.setAmount(1);
             }
             if(answer==3){
-                customer.checkout(fakeblood.getPrice(),fakeblood.getAmount());
+                customer.checkout(fakeblood.discountPrice(),fakeblood.getAmount());
                 fakeblood.setAmount(1);
             }
             if(answer==4){
